@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <button id="button">Button</button>
+    <p id="compteur">0</p>
 </body>
 
 </html>

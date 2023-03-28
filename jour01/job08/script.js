@@ -17,9 +17,6 @@ function sommenombrepremier(a, b) {
   }
 }
 
-console.log(sommenombrepremier(11,4));
+// console.log(sommenombrepremier(11, 3));
 
-//   for (var i = 2; i < nbr; i++) {
-//     if (nbr % i === 0) return false;
-//     return i + nbr;
-//   }
+document.addEventListener("submit", sommenombrepremier);

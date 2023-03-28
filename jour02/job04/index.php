@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <!-- <button id="button">Button</button> -->
+    <textarea name="" id="keylogger" cols="30" rows="10"></textarea>
 </body>
 
 </html>

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <button id="button">Button</button>
 </body>
 
 </html>
