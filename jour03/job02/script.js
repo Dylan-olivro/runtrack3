@@ -1,6 +1,5 @@
 let images = $("#debut").find("img");
 // console.log(images);
-
 $("#shuffle").click(() => {
   images.sort(() => Math.random() - 0.5);
   $("#debut").append(images);
