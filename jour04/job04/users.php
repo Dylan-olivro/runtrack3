@@ -1,38 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+// Informations de connexion à la base de données MySQL
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "utilisateurs";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../jquery-3.6.4.min.js"></script>
-    <script src="script.js" defer></script>
-    <title>Document</title>
-</head>
+try {
+    // Connexion à la base de données MySQL avec PDO
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
-<body>
-    <?php
-    session_start();
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
+    // Configuration de PDO pour générer des exceptions en cas d'erreur
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    try {
-        $bdd = new PDO("mysql:host=$servername;dbname=utilisateurs", $username, $password);
+    // Récupération de l'ensemble des utilisateurs
+    $sql = "SELECT * FROM users";
+    $stmt = $conn->query($sql);
 
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Connexion réussie';
-    } catch (PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-    }
+    // Récupération des résultats dans un tableau associatif
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $recupUser = $bdd->prepare('SELECT * FROM users');
-    $recupUser->execute();
-    $result = $recupUser->fetchAll(PDO::FETCH_ASSOC);
-    // var_dump($result);
-    $json = json_encode($result, JSON_PRETTY_PRINT);
+    // Conversion du tableau en JSON
+    $json_users = json_encode($users);
 
-    ?>
-</body>
+    // Affichage du JSON
+    header('Content-Type: application/json');
+    echo $json_users;
+} catch (PDOException $e) {
+    // Affichage d'une erreur en cas d'échec de la connexion à la base de données
+    die("La connexion a échoué: " . $e->getMessage());
+}
 
-</html>
+// Fermeture de la connexion à la base de données
+$conn = null;

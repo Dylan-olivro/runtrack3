@@ -1,43 +1,39 @@
-let images = $("#debut").find("img");
-// console.log(images);
+let images = $("#game").find("img");
+let result = $("p");
+
 $("#shuffle").click(() => {
   images.sort(() => Math.random() - 0.5);
-  $("#debut").append(images);
+  $("#game").append(images);
 });
 
 $("#reset").click(() => {
   location.reload();
 });
 
-let compteur = 0;
-let erreur = 0;
+let hitCount = 0;
+let countError = 0;
 let x = 7;
 
 for (let i = 1; i <= 6; i++) {
   $(`#${i}`).click(() => {
-    console.log(i);
-    // let imagesSrc = $("#" + i).attr("src");
     $("#" + i).css("display", "none");
     $("#" + x++).attr("src", $("#" + i).attr("src"));
 
-    compteur++;
+    hitCount++;
 
-    let verif1 = $("#" + (i + 7)).attr("id");
-    let verif2 = $("#" + x).attr("id");
-    // console.log(verif2);
-    // console.log(x);
+    let check_1 = $("#" + (i + 7)).attr("id");
+    let check_2 = $("#" + x).attr("id");
 
-    if (verif1 != verif2) {
-      erreur++;
+    if (check_1 != check_2) {
+      countError++;
     }
-
-    if (compteur == 6) {
-      if (erreur) {
-        $("p").text("Vous avez PERDU");
-        $("p").css({ color: "red", textAlign: "center" });
+    if (hitCount == 6) {
+      if (countError) {
+        result.text("Vous avez PERDU");
+        result.css({ color: "red", textAlign: "center" });
       } else {
-        $("p").css({ color: "green", textAlign: "center" });
-        $("p").text("Vous avez GAGNE");
+        result.css({ color: "green", textAlign: "center" });
+        result.text("Vous avez GAGNE");
       }
     }
   });

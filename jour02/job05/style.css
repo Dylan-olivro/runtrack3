@@ -4,8 +4,9 @@
 }
 body {
   min-height: 500vh;
+  background-color: #000;
 }
-#barre {
+#bar {
   height: 3em;
   width: 0;
   position: fixed;

@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("button");
-  const p = document.getElementById("compteur");
+const btn = document.getElementById("button");
+const count = document.getElementById("count");
 
-  function addone() {
-    p.textContent++;
-    console.log("click");
-  }
+function addone() {
+  count.textContent++;
+  console.log("click");
+}
 
-  btn.addEventListener("click", addone);
-});
+btn.addEventListener("click", addone);

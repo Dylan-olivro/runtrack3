@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("button");
   const article = document.createElement("article");
   article.textContent = "L'important n'est pas la chute, mais l'atterissage";
@@ -18,4 +17,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btn.addEventListener("click", showhide);
-});

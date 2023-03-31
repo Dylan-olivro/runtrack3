@@ -1,4 +1,4 @@
-const p = document.querySelector("p");
+const expression = document.querySelector("p");
 
 let button = document.getElementById("button");
 button.addEventListener("click", () => {
@@ -7,7 +7,7 @@ button.addEventListener("click", () => {
   })
     .then((response) => response.text())
     .then((data) => {
-      p.innerHTML = data;
+      expression.innerHTML = data;
     })
     .catch((error) => alert("Erreur : " + error));
 });

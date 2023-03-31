@@ -1,5 +1,3 @@
-// console.log("Hello Javascript !");
-// console.log(joursemaines);
 function fizzbuzz() {
   for (let i = 0; i <= 151; i++) {
     // console.log(i);

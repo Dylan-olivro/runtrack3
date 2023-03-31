@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <footer id="barre"></footer>
+    <footer id="bar"></footer>
 </body>
 
 </html>

@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../jquery-3.6.4.min.js"></script>
-    <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Tableau des utilisateurs</title>
 </head>
 
 <body>
-    <?php
-    require_once('users.php');
-    var_dump($result);
-    ?>
-    <table></table>
-    <button id="update"></button>
+
+    <!-- Tableau HTML pour afficher les utilisateurs -->
+    <table>
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="users-table-body">
+
+        </tbody>
+    </table>
+
+    <!-- Bouton pour mettre à jour le tableau -->
+    <button onclick="updateUsers()">Update</button>
+
+    <!-- Script pour mettre à jour le tableau en utilisant AJAX -->
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

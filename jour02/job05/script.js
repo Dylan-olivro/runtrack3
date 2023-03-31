@@ -1,10 +1,10 @@
 window.onload = () => {
   window.addEventListener("scroll", () => {
-    let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+    let height = document.documentElement.scrollHeight - window.innerHeight;
     let position = window.scrollY;
-    let largeur = document.documentElement.clientWidth;
-    let barre = (position / hauteur) * largeur;
+    let width = document.documentElement.clientWidth;
+    let bar = (position / height) * width;
 
-    document.getElementById("barre").style.width = barre + "px";
+    document.getElementById("bar").style.width = bar + "px";
   });
 };

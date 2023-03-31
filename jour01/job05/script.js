@@ -1,5 +1,4 @@
-// console.log("Hello Javascript !");
-let joursemaines = [
+let jourssemaines = [
   "lundi",
   "mardi",
   "mercredi",
@@ -9,11 +8,11 @@ let joursemaines = [
   "dimanche",
 ];
 
-// console.log(joursemaines);
+// console.log(dayWeek);
 
 function afficherjourssemaines() {
   for (let i = 0; i < 7; i++) {
-    console.log(joursemaines[i]);
+    console.log(jourssemaines[i]);
     // console.log(joursemaine[i]);
   }
 }
