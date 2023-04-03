@@ -1,0 +1,69 @@
+/* MENU */
+#nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+#nav > a {
+  margin: 0 5px;
+}
+
+/* bouton menu burger */
+#burger {
+  position: fixed;
+  top: 4px;
+  right: 4px;
+  z-index: 50;
+  padding: 5px 8px;
+  color: #fff;
+  background: #577bac;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* MOBILE FIRST */
+#nav {
+  flex-direction: column;
+}
+#burger {
+  display: block;
+}
+/* TABLET - DESKTOP */
+@media sreen and (min-width: 769px) {
+  #nav {
+    flex-direction: row;
+    /*flex-wrap:wrap;*/
+  }
+  #nav > a {
+    display: flex;
+    align-items: center;
+    /*flex-wrap:wrap;*/
+  }
+  #burger {
+    display: none;
+  }
+}
+/* #nav > a {
+  padding: 10px 20px;
+  margin: 0 2px;
+  text-decoration: none;
+  font: 1em Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  border: solid 1px #fff;
+  background: #577bac;
+  border-radius: 30px;
+  text-align: center;
+} */
+/* #nav > a:hover {
+  background: #ffaaaa;
+  color: #577bac;
+  border: solid 1px #577bac;
+} */
+
+/* #burger:hover {
+  background: #ffaaaa;
+  color: #577bac;
+  border: solid 1px #577bac;
+} */
